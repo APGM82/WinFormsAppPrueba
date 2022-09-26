@@ -122,5 +122,31 @@ namespace WinFormsAppPrueba
                 ft.Show();
             }
         }
+
+        private void btnCalendarios_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length > 0)
+            {
+                if (this.MdiChildren[0].Name != "frmCalendarios")
+                {
+                    DialogResult rs = MessageBox.Show("¿Desea cerrar el formulario actual?", "¡Advertencia!", MessageBoxButtons.YesNo);
+                    if (rs == DialogResult.Yes)
+                    {
+                        this.MdiChildren[0].Close();
+                        frmCalendarios ft = new frmCalendarios();
+                        ft.MdiParent = this;
+                        ft.Dock = DockStyle.Fill;
+                        ft.Show();
+                    }
+                }
+            }
+            else
+            {
+                frmCalendarios ft = new frmCalendarios();
+                ft.MdiParent = this;
+                ft.Dock = DockStyle.Fill;
+                ft.Show();
+            }
+        }
     }
 }
