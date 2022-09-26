@@ -16,5 +16,26 @@ namespace WinFormsAppPrueba
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txbAdd.Text != "")
+                cmbComboBox1.Items.Add(txbAdd.Text);
+        }
+
+        private void cmbComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txbUltimoColor.Text = cmbComboBox1.SelectedItem.ToString();
+        }
+
+        private void cmbComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txbUltimoColor.Text = cmbComboBox2.SelectedItem.ToString();
+        }
+
+        private void cmbComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txbUltimoColor.Text = cmbComboBox3.SelectedItem.ToString();
+        }
     }
 }
