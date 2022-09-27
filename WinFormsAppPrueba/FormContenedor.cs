@@ -148,5 +148,31 @@ namespace WinFormsAppPrueba
                 ft.Show();
             }
         }
+
+        private void btnCajas_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length > 0)
+            {
+                if (this.MdiChildren[0].Name != "frmCajaList")
+                {
+                    DialogResult rs = MessageBox.Show("¿Desea cerrar el formulario actual?", "¡Advertencia!", MessageBoxButtons.YesNo);
+                    if (rs == DialogResult.Yes)
+                    {
+                        this.MdiChildren[0].Close();
+                        frmCajaList ft = new frmCajaList();
+                        ft.MdiParent = this;
+                        ft.Dock = DockStyle.Fill;
+                        ft.Show();
+                    }
+                }
+            }
+            else
+            {
+                frmCajaList ft = new frmCajaList();
+                ft.MdiParent = this;
+                ft.Dock = DockStyle.Fill;
+                ft.Show();
+            }
+        }
     }
 }

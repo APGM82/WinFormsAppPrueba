@@ -116,6 +116,7 @@
             this.btnCajas.TabIndex = 4;
             this.btnCajas.Text = "05-Cajas";
             this.btnCajas.UseVisualStyleBackColor = true;
+            this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
             // 
             // btnListas
             // 
